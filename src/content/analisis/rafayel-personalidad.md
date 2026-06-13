@@ -1,24 +1,24 @@
 ---
-title: "Rafayel: ternura, teatro y defensas emocionales"
-description: "Un primer mapa para analizar su personalidad: encanto, evasión, orgullo artístico y vulnerabilidad escondida."
+title: "Rafayel: tenderness, theater, and emotional defenses"
+description: "A first map for analyzing his personality: charm, avoidance, artistic pride, and hidden vulnerability."
 date: 2026-06-13
-tags: ["personalidad", "emociones", "máscaras"]
-mood: "mar profundo con coral dramático"
+tags: ["personality", "emotions", "masks"]
+mood: "deep sea with dramatic coral"
 featured: true
 ---
 
-## Tesis inicial
+## Initial thesis
 
-Rafayel funciona como un personaje de contraste: se muestra juguetón, artístico y encantador, pero esa ligereza muchas veces parece cubrir algo más antiguo, más serio y más doloroso.
+Rafayel works as a character of contrast: he appears playful, artistic, and charming, but that lightness often seems to cover something older, more serious, and more painful.
 
-## Pistas de personalidad
+## Personality clues
 
-- Usa el humor como cortina.
-- Tiene una relación fuerte con la belleza, el control y la memoria.
-- Su vulnerabilidad aparece en fragmentos, no como confesión directa.
+- He uses humor as a curtain.
+- He has a strong relationship with beauty, control, and memory.
+- His vulnerability appears in fragments, not as a direct confession.
 
-## Preguntas para desarrollar
+## Questions to develop
 
-1. ¿Cuándo bromea para acercarse?
-2. ¿Cuándo bromea para evitar ser leído?
-3. ¿Qué símbolos se repiten cuando baja la guardia?
+1. When does he joke to get closer?
+2. When does he joke to avoid being read?
+3. What symbols repeat when he lets his guard down?

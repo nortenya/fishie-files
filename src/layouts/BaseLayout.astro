@@ -1,9 +1,10 @@
 ---
 import '../styles/global.css';
+import OceanCursor from "../components/OceanCursor.astro";
 
 const {
   title = 'Fishie Files',
-  description = 'Archivo de análisis, lore y teorías sobre Rafayel.'
+  description = 'Analysis, lore, and theories file about Rafayel.'
 } = Astro.props;
 ---
 <!doctype html>
@@ -15,16 +16,17 @@ const {
     <title>{title}</title>
   </head>
   <body>
+  <OceanCursor />
     <header class="nav">
       <a class="brand" href={`${import.meta.env.BASE_URL}`}>
         <span class="brand-mark">🐟</span>
         <span>Fishie Files</span>
       </a>
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href={`${import.meta.env.BASE_URL}`}>Inicio</a>
-        <a href={`${import.meta.env.BASE_URL}analisis/`}>Análisis</a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href={`${import.meta.env.BASE_URL}`}>Home</a>
+        <a href={`${import.meta.env.BASE_URL}analisis/`}>Analysis</a>
         <a href={`${import.meta.env.BASE_URL}lore/`}>Lore</a>
-        <a href={`${import.meta.env.BASE_URL}teorias/`}>Teorías</a>
+        <a href={`${import.meta.env.BASE_URL}teorias/`}>Theories</a>
         <a href={`${import.meta.env.BASE_URL}timeline/`}>Timeline</a>
       </nav>
     </header>
@@ -32,7 +34,7 @@ const {
     <slot />
 
     <footer class="footer">
-      <small>Fishie Files · Archivo personal de análisis. Hecho con amor, océano y demasiadas teorías.</small>
+      <small>Fishie Files · Personal analysis file: Where his beloved bride tries to understand him better.</small>
     </footer>
   </body>
 </html>

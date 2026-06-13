@@ -12,36 +12,57 @@ const allEntries = [
 
 const featured = allEntries.filter((entry) => entry.data.featured).slice(0, 3);
 ---
+
 <BaseLayout>
   <main>
     <section class="hero">
       <div>
         <span class="eyebrow">Rafayel archive · lore · personality · theories</span>
+
         <h1>Fishie Files</h1>
+
         <p class="hero-copy">
-          Un archivo personal para diseccionar a Rafayel con cariño, lupa dramática y una cantidad indecente de simbolismo marítimo.
+          A personal archive to understand Rafayel, his symbolism, and put an end to his mischaracterization.
         </p>
+
         <div class="button-row">
-          <a class="button primary" href={`${import.meta.env.BASE_URL}analisis/`}>Leer análisis</a>
-          <a class="button" href={`${import.meta.env.BASE_URL}timeline/`}>Ver timeline</a>
+          <a class="button primary" href={`${import.meta.env.BASE_URL}analisis/`}>
+            Read analysis
+          </a>
+
+          <a class="button ghost" href={`${import.meta.env.BASE_URL}timeline/`}>
+            View timeline
+          </a>
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Nota de archivo">
-        <div class="card-title">Expediente activo</div>
-        <p class="quote">
-          Arte, mar, memoria, fuego emocional y esa sonrisa de “yo no estoy ocultando nada” que definitivamente está ocultando algo.
-        </p>
-      </aside>
+      <div class="hero-card archive-card">
+        <div class="archive-card-text">
+          <p class="card-title">Active record</p>
+
+          <p class="quote">
+            "When your own heart is devouring you, is there anything that can pull you back?"
+          </p>
+        </div>
+
+        <div class="archive-image-frame">
+          <img
+            class="archive-image"
+            src={`${import.meta.env.BASE_URL}images/saphiredream.jpg`}
+            alt="Archive record visual"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Destacados</span>
-          <h2>Entradas principales</h2>
+          <span class="eyebrow">Featured</span>
+          <h2>Main entries</h2>
         </div>
-        <p>Empieza por aquí cuando quieras navegar el caos bonito.</p>
+
+        <p>Start here whenever you’re ready to dive into the deep sea.</p>
       </div>
 
       <div class="grid">
@@ -59,26 +80,49 @@ const featured = allEntries.filter((entry) => entry.data.featured).slice(0, 3);
     <section class="section">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Secciones</span>
-          <h2>Mapa del archivo</h2>
+          <span class="eyebrow">Sections</span>
+          <h2>Archive map</h2>
         </div>
       </div>
 
       <div class="grid">
         <a class="card" href={`${import.meta.env.BASE_URL}analisis/`}>
-          <h3>Personalidad</h3>
-          <p>Rasgos, contradicciones, vulnerabilidad, forma de amar y mecanismos de defensa.</p>
-          <div class="tag-list"><span class="tag">psicología</span><span class="tag">dinámica</span></div>
+          <h3>Personality</h3>
+
+          <p>
+            Rasgos, contradicciones, vulnerabilidad, forma de amar y mecanismos de defensa.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">psicología</span>
+            <span class="tag">dinámica</span>
+          </div>
         </a>
+
         <a class="card" href={`${import.meta.env.BASE_URL}lore/`}>
           <h3>Lore</h3>
-          <p>Eventos, símbolos, contexto y piezas narrativas que explican su historia.</p>
-          <div class="tag-list"><span class="tag">canon</span><span class="tag">mundo</span></div>
+
+          <p>
+            Eventos, símbolos, contexto y piezas narrativas que explican su historia.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">canon</span>
+            <span class="tag">mundo</span>
+          </div>
         </a>
+
         <a class="card" href={`${import.meta.env.BASE_URL}teorias/`}>
-          <h3>Teorías</h3>
-          <p>Hipótesis con evidencia, sospechas elegantes y conexiones que duelen rico.</p>
-          <div class="tag-list"><span class="tag">evidencia</span><span class="tag">spoilers</span></div>
+          <h3>Theories</h3>
+
+          <p>
+            Hipótesis con evidencia, sospechas elegantes y conexiones que duelen rico.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">evidencia</span>
+            <span class="tag">spoilers</span>
+          </div>
         </a>
       </div>
     </section>

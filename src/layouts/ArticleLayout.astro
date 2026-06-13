@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout title={`${frontmatter.title} · Fishie Files`} description={frontmatter.description}>
   <main class="article">
-    <a class="eyebrow" href={`${import.meta.env.BASE_URL}`}>← Volver al archivo</a>
+    <a class="eyebrow" href={`${import.meta.env.BASE_URL}`}>← Back to the archive</a>
     <h1>{frontmatter.title}</h1>
     <div class="article-meta">
       {frontmatter.date?.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
