@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allEntries = [
+  ...(await getCollection('analisis')),
+  ...(await getCollection('lore')),
+  ...(await getCollection('teorias')),
+  ...(await getCollection('timeline'))
+].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featured = allEntries.filter((entry) => entry.data.featured).slice(0, 3);
+---
+<BaseLayout>
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Rafayel archive · lore · personality · theories</span>
+        <h1>Fishie Files</h1>
+        <p class="hero-copy">
+          Un archivo personal para diseccionar a Rafayel con cariño, lupa dramática y una cantidad indecente de simbolismo marítimo.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href={`${import.meta.env.BASE_URL}analisis/`}>Leer análisis</a>
+          <a class="button" href={`${import.meta.env.BASE_URL}timeline/`}>Ver timeline</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Nota de archivo">
+        <div class="card-title">Expediente activo</div>
+        <p class="quote">
+          Arte, mar, memoria, fuego emocional y esa sonrisa de “yo no estoy ocultando nada” que definitivamente está ocultando algo.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Destacados</span>
+          <h2>Entradas principales</h2>
+        </div>
+        <p>Empieza por aquí cuando quieras navegar el caos bonito.</p>
+      </div>
+
+      <div class="grid">
+        {featured.map((entry) => (
+          <ArticleCard
+            title={entry.data.title}
+            description={entry.data.description}
+            href={`${import.meta.env.BASE_URL}${entry.collection}/${entry.slug}/`}
+            tags={entry.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Secciones</span>
+          <h2>Mapa del archivo</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a class="card" href={`${import.meta.env.BASE_URL}analisis/`}>
+          <h3>Personalidad</h3>
+          <p>Rasgos, contradicciones, vulnerabilidad, forma de amar y mecanismos de defensa.</p>
+          <div class="tag-list"><span class="tag">psicología</span><span class="tag">dinámica</span></div>
+        </a>
+        <a class="card" href={`${import.meta.env.BASE_URL}lore/`}>
+          <h3>Lore</h3>
+          <p>Eventos, símbolos, contexto y piezas narrativas que explican su historia.</p>
+          <div class="tag-list"><span class="tag">canon</span><span class="tag">mundo</span></div>
+        </a>
+        <a class="card" href={`${import.meta.env.BASE_URL}teorias/`}>
+          <h3>Teorías</h3>
+          <p>Hipótesis con evidencia, sospechas elegantes y conexiones que duelen rico.</p>
+          <div class="tag-list"><span class="tag">evidencia</span><span class="tag">spoilers</span></div>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

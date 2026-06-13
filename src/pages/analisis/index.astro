@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('analisis')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="Análisis · Fishie Files">
+  <main class="section">
+    <span class="eyebrow">Personalidad</span>
+    <h1>Análisis</h1>
+    <p>Ensayos sobre comportamiento, vínculos, heridas, máscaras y detalles emocionales de Rafayel.</p>
+    <div class="grid">
+      {entries.map((entry) => (
+        <ArticleCard title={entry.data.title} description={entry.data.description} href={`${import.meta.env.BASE_URL}analisis/${entry.slug}/`} tags={entry.data.tags} />
+      ))}
+    </div>
+  </main>
+</BaseLayout>

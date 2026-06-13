@@ -1,0 +1,10 @@
+---
+const { title, description, href, tags = [] } = Astro.props;
+---
+<a class="card" href={href}>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <div class="tag-list">
+    {tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+</a>

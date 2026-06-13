@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('timeline')).sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+---
+<BaseLayout title="Timeline · Fishie Files">
+  <main class="section">
+    <span class="eyebrow">Cronología</span>
+    <h1>Timeline</h1>
+    <p>Una línea temporal para acomodar eventos, teorías y pistas sin que el lore nos coma vivos.</p>
+    <div class="timeline">
+      {entries.map((entry) => (
+        <a class="timeline-item" href={`${import.meta.env.BASE_URL}timeline/${entry.slug}/`}>
+          <strong>{entry.data.date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}</strong>
+          <h3>{entry.data.title}</h3>
+          <p>{entry.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
